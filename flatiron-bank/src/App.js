@@ -27,7 +27,7 @@ function App() {
     const transaction = { id, ...newTransaction };
     setTransactions([...transactions, transaction]);
   };
-  
+  //helps on search area when searching
   const filteredTransactions = transactions ? transactions.filter((transaction) =>
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
   ) : [];

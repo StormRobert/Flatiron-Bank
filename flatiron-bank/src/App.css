@@ -80,6 +80,14 @@
   border-radius: 5px;
 }
 
+.transaction-form button{
+  background-color: var(--color-success);
+  cursor: pointer;
+}
+.transaction-form button :hover {
+  color: var(--color-warning);
+
+}
 .App .transaction-table{
   box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
   background-color: #f9f9f9;
@@ -102,8 +110,8 @@
 }
 
 .transaction-table button:hover{
-  color: var(--color-danger) ;
-  
+  background-color: var(--color-danger) ;
+
 }
 
 .transaction-table th {

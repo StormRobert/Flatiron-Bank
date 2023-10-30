@@ -9,7 +9,7 @@ function TableTransaction({transactions, onDelete}) {
         <tr>
           <th>Date</th>
           <th>Description</th>
-          <th>category</th>
+          <th>Category</th>
           <th>Amount</th>
           <th>Actions</th>
         </tr>
