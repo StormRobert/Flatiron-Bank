@@ -1,11 +1,25 @@
 import React from "react";
 import TableRowTransaction from "./TableRowTransaction";
 
-function TableTransaction({transaction, onDelete}) {
+function TableTransaction({transactions, onDelete}) {
     return(
-        <div>
-            
-        </div>
+    
+    <table>
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        {transactions.map((transaction) => (
+          <TableRowTransaction key={transaction.id} transaction={transaction} onDelete={onDelete} />
+        ))}
+      </tbody>
+    </table>  
+        
     )
 }
 export default TableTransaction;
