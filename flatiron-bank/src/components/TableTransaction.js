@@ -3,12 +3,13 @@ import TableRowTransaction from "./TableRowTransaction";
 
 function TableTransaction({transactions, onDelete}) {
     return(
-    
+    <div className="transaction-table">
     <table>
       <thead>
         <tr>
           <th>Date</th>
           <th>Description</th>
+          <th>category</th>
           <th>Amount</th>
           <th>Actions</th>
         </tr>
@@ -19,7 +20,7 @@ function TableTransaction({transactions, onDelete}) {
         ))}
       </tbody>
     </table>  
-        
+   </div>     
     )
 }
 export default TableTransaction;

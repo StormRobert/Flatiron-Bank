@@ -4,8 +4,8 @@ function TransactionForm({onSubmit}){
     const [description, setDescription] = useState('');
     const [amount, setAmount] = useState('');
   
-    const handleSubmit = (e) => {
-      e.preventDefault();
+    const handleSubmit = (event) => {
+      event.preventDefault();
       onSubmit({ description, amount });
       setDescription('')
       setAmount('')
@@ -13,8 +13,8 @@ function TransactionForm({onSubmit}){
 
 
 return(
-    <div>
-         <form onSubmit={handleSubmit}>
+  <div className="transaction-form">
+    <form onSubmit={handleSubmit}>
       <input
         type="text"
         placeholder="Description"
@@ -29,7 +29,7 @@ return(
       />
       <button type="submit">Add Transaction</button>
     </form>
-    </div>
+  </div>
 )
 
 }

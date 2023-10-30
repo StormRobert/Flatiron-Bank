@@ -13,6 +13,7 @@
   --color-primary: #6c9BCF;
   --color-dark: #363949;
   --color-dark-variant: #677483;
+  --color-dark-variant-2:#282c34;
   --color-info-dark: #7d8da1;
   --color-background: #f6f6f9;
   --color-light: rgba(132, 139, 200, 0.18);
@@ -46,7 +47,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: var(--color-dark-variant-2);
   min-height: 8vh;
   align-items: center;
 
@@ -63,8 +64,57 @@
   transform: translate(-50%, -50%); 
 } 
 
-.App-link {
-  color: #61dafb;
+
+.transaction-form {
+  background-color: var(--color-dark-variant-2);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
+.transaction-form input {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 
+.App .transaction-table{
+  box-shadow: 0 2rem 3rem rgba(132, 139, 200, 0.18);
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 20px 0;
+}
+
+.App .transaction-table th, td{
+  border: 1px solid var(--color-info-dark);
+  padding: 8px;
+  text-align: left;
+}
+
+.transaction-table button{
+  cursor: pointer;
+  background-color: var(--color-info-dark);
+
+}
+
+.transaction-table button:hover{
+  color: var(--color-danger) ;
+  
+}
+
+.transaction-table th {
+  background-color: #333;
+  color: #fff;
+}
+
+.transaction-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.search-bar {
+  padding: 10px;
+}

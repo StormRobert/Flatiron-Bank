@@ -20,18 +20,20 @@ function App() {
       })
   });
 
-  const addTransaction = (newTransaction) => {
-    // Simulate adding a new transaction to the local state (no backend persistence).
+  function addTransaction(newTransaction) {
+    // Simulate adding a new transaction
+    // had help with gpt here on adding
     const id = Date.now();
     const transaction = { id, ...newTransaction };
     setTransactions([...transactions, transaction]);
   };
+  
   const filteredTransactions = transactions ? transactions.filter((transaction) =>
     transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
   ) : [];
 
-  const deleteTransaction = (id) => {
-    // Simulate deleting a transaction from the local state (no backend persistence).
+  function deleteTransaction(id) {
+    // deleting a transaction 
     setTransactions(transactions.filter((transaction) => transaction.id !== id));
   };
 
@@ -41,11 +43,9 @@ function App() {
      <h1>Flatiron Bank </h1>
       </header> */}
       <Header />
-      <TableTransaction transactions={filteredTransactions} onDelete={deleteTransaction}/>
+      <TableTransaction transactions={filteredTransactions} onDelete={deleteTransaction}/> 
       <SearchBar onSearch={setSearchTerm}/>
       <TransactionForm onSubmit={addTransaction}/>
-
-
     </div>
   );
 }
