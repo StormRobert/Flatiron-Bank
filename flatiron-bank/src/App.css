@@ -41,6 +41,8 @@
 .app h1{
   font-weight: 800;
   font-size: 1.8rem;
+
+
 }
 .App-logo {
   height: 40vmin;
@@ -55,14 +57,21 @@
 
 .App-header {
   background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  min-height: 8vh;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+
+  font-size: 1.3rem;
+  color: #fff; /* Text color for the header */
+  padding: 20px;
+  position: relative;
 }
+
+.App-header h1{
+  position: absolute;
+  top: 30%; 
+  left: 50%; 
+  transform: translate(-50%, -50%); 
+} 
 
 .App-link {
   color: #61dafb;

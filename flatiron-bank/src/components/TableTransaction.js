@@ -1,8 +1,11 @@
 import React from "react";
+import TableRowTransaction from "./TableRowTransaction";
 
-
-return(
-    <div>
-        
-    </div>
-)
+function TableTransaction({transaction, onDelete}) {
+    return(
+        <div>
+            
+        </div>
+    )
+}
+export default TableTransaction;

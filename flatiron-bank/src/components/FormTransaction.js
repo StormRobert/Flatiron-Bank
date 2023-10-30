@@ -1,4 +1,6 @@
 import React from "react";
+function TransactionForm(){
+
 
 
 return(
@@ -6,3 +8,6 @@ return(
         
     </div>
 )
+
+}
+export default TransactionForm;
