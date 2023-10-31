@@ -7,45 +7,40 @@ import SearchBar from './components/SearchBar';
 import Header from './components/Header';
 
 
-function App() {
 
+function App() {
   const [transactions, setTransactions] = useState([]);
   const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetch('http://localhost:3000/transactions') // Update the URL to match your JSON server endpoint.
+    fetch('http://localhost:3000/transactions')
       .then((response) => response.json())
       .then((data) => {
         setTransactions(data);
-      })
-  });
+      });
+  }, []);
 
   function addTransaction(newTransaction) {
-    // Simulate adding a new transaction
-    // had help with gpt here on adding
-    const id = Date.now();
-    const transaction = { id, ...newTransaction };
-    setTransactions([...transactions, transaction]);
-  };
-  //helps on search area when searching
-  const filteredTransactions = transactions ? transactions.filter((transaction) =>
-    transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
-  ) : [];
+    setTransactions([...transactions, newTransaction]);
+  }
+
+  const filteredTransactions = transactions
+    ? transactions.filter((transaction) =>
+        transaction.description.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : [];
 
   function deleteTransaction(id) {
-    // deleting a transaction 
-    setTransactions(transactions.filter((transaction) => transaction.id !== id));
-  };
+    const updatedTransactions = transactions.filter((transaction) => transaction.id !== id);
+    setTransactions(updatedTransactions);
+  }
 
   return (
     <div className="App">
-      {/* <header className="App-header">
-     <h1>Flatiron Bank </h1>
-      </header> */}
       <Header />
-      <TableTransaction transactions={filteredTransactions} onDelete={deleteTransaction}/> 
-      <SearchBar onSearch={setSearchTerm}/>
-      <TransactionForm onSubmit={addTransaction}/>
+      <TableTransaction transactions={filteredTransactions} onDelete={deleteTransaction} />
+      <SearchBar onSearch={setSearchTerm} />
+      <TransactionForm onSubmit={addTransaction} />
     </div>
   );
 }
